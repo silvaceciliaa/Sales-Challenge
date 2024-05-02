@@ -12,7 +12,7 @@ public class ContaEmailHandler {
                 String emailSub = 'Welcome ' + account.Name ;
                 emailMsg.setSubject(emailSub);
                 String content = 'Hi ' + account.Name + ',<br/><br/>' +
-                                  'Welcome to salesforce !' ;
+                                  'Welcome to salesforce!' ;
                 emailMsg.SetHtmlBody(content);    
                 
                 lstEmail.add(emailMsg);
