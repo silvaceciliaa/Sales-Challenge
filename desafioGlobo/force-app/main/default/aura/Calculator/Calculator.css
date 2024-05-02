@@ -1,0 +1,72 @@
+.THIS {
+}
+.THIS #calculadoraIcon{
+    width: 28px;
+    height: 28px;
+}
+.THIS #ioDiv{
+    text-align: right;
+    color: black;
+    height: 90px;
+    padding-right: 20px;
+    margin-bottom: 10px
+}
+.THIS #inputDiv{
+    font-size: 20px;
+}
+.THIS #outputDiv{
+    font-size: 40px;
+}
+.THIS table{
+    border-collapse: separate;
+    border-spacing: 0px;
+}
+.THIS td{
+    text-align: center;
+    padding:20px 0px;
+    font-size: 16px;
+    background-color: #d9d9d9;
+    color: black;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    transition-property: border;
+    transition-duration: 0.3s;
+    transition-delay: 0s;
+    border-radius: 35%;
+}
+
+.THIS td:hover {
+    border: 2px solid #8783eb;
+}
+.THIS .operator{
+    background-color: #ab5eeb;
+    color: white;
+    font-size: 20px;
+}
+
+.THIS .equals{
+    background-color: #5271FF;
+    color: white;
+}
+
+.THIS .clear-button{
+    background-color: #ffbd59;
+}
+
+.THIS .dark-mode td {
+    background-color: grey;
+    color: #FFFFFF;
+}
+
+.THIS .dark-mode .operator{
+    background-color: #3A1954;
+    color: white;
+}
+
+.THIS .dark-mode .equals{
+    background-color: #263C9F;
+}
+
+.THIS .dark-mode .clear-button{
+    background-color: #CF9946;
+}

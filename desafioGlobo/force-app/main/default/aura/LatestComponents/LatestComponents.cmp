@@ -1,0 +1,28 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" controller="LatestRecords">  
+    <aura:handler name="init" value="{!this}" action="{!c.getLatestLeads}" />
+    <aura:attribute name="leads" type="Lead[]" />
+    <lightning:card class="card">
+        <div class="container">
+            <div class="slds-border_bottom card-top">
+                <p>Últimos 10 Leads Criados</p>
+            </div>
+            <div class="slds-grid slds-grid_pull-padded-medium fields">
+                <div class="container-list">
+                    <ul class="column">
+                        <aura:iteration items="{!v.leads}" var="lead">
+                            <li class="minli"> 
+                                <span><strong>Nome: </strong> <ui:outputText value="{!lead.Name}" class="lead" /></span>
+                                <span><strong>Empresa: </strong><ui:outputText value="{!lead.Company}" class="lead"/></span>
+                                <span><strong>Email: </strong><ui:outputText value="{!lead.Email}" class="lead"/></span>
+                                <span><strong>Celular: </strong><ui:outputText value="{!lead.Phone}" class="lead"/></span>
+                                <span><strong>Status: </strong><ui:outputText value="{!lead.Status}" class="lead"/></span>
+                                <span><strong>Data de Criação: </strong><ui:outputText value="{!lead.CreatedDate}" class="lead"/></span>
+                            </li>
+                        </aura:iteration>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </lightning:card>
+</aura:component>

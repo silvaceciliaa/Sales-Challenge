@@ -1,0 +1,27 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <lightning:recordEditForm aura:id="recordEditForm"
+                              objectApiName="Account"
+                              onsuccess="{!c.handleSuccess}">
+        <lightning:messages />
+        
+        <lightning:card class="card">
+            <div class="slds-border_bottom card-top">
+                <p>Criar Conta</p>
+            </div>
+            <div class="slds-grid slds-grid_pull-padded-medium fields">
+                <div class="slds-col slds-p-horizontal_medium">
+                    <lightning:inputField class="input-field" fieldName="Name" />
+                    <lightning:inputField class="input-field" fieldName="Type" />
+                </div>
+                <div class="slds-col slds-p-horizontal_medium">
+                    <lightning:inputField class="input-field" fieldName="Phone" />
+                    <lightning:inputField class="input-field" fieldName="Industry"/>
+                </div>
+            </div>
+            <div id="button">
+            <lightning:button class="slds-button slds-button_success" type="submit" label="Criar Conta" onclick="{!c.handleSuccess}"/>
+                </div>
+        </lightning:card>
+        
+    </lightning:recordEditForm>
+</aura:component>

@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Configurações de Email">
+        <lightning-record-edit-form 
+        object-api-name="Account"
+        record-id={recordId}>
+        <div class="slds-col slds-no-flex slds-align-middle">
+            <label class="slds-checkbox_toggle slds-grid">
+                <lightning-input-field field-name="Send_Email__c"></lightning-input-field>
+            </label>
+        </div>
+            <lightning-input-field field-name="Email__c"></lightning-input-field>
+                <lightning-button
+                    class="slds-m-top_small"
+                    variant="brand"
+                    type="submit"
+                    name="update"
+                    label="Update"
+                >
+                </lightning-button>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>

@@ -1,0 +1,25 @@
+.THIS {
+}
+
+.THIS .fields{
+    padding: 15px;
+}
+
+.THIS .card-top{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.THIS .card{
+    text-align: center;
+}
+
+.THIS .input-field:hover {
+    border-radius: 60px;
+    border: 2px solid white;
+}
+
+.THIS .button{
+    display: flex;
+    justify-content: center;
+}

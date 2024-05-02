@@ -1,0 +1,43 @@
+.THIS {
+}
+
+.THIS .fields{
+    padding: 15px;
+}
+
+.THIS .card-top{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.THIS .card{
+    text-align: center;
+}
+
+.THIS .input-field:hover {
+    border-radius: 60px;
+    border: 2px solid white;
+}
+
+.THIS .button{
+    display: flex;
+    justify-content: center;
+}
+
+.THIS .minli {
+    display: flex;
+    flex-direction: column;
+}
+
+.THIS .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.THIS .container-list .column {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    gap: 40px;
+}

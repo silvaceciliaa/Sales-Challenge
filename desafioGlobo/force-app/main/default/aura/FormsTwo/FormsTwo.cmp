@@ -1,0 +1,19 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <lightning:recordEditForm aura:id="recordEditForm"
+                              objectApiName="Contact"
+                              onsuccess="{!c.handleSuccess}">
+        <lightning:messages />
+        
+        <div class="slds-grid slds-grid_pull-padded-medium inputs">
+            <div class="slds-col slds-p-horizontal_medium">
+                <lightning:inputField class="inputField" fieldName="Name" />
+            </div>
+            <div class="slds-col slds-p-horizontal_medium">
+                <lightning:inputField fieldName="Email" />
+                <lightning:inputField fieldName="Phone" />
+            </div>
+        </div>
+        
+        <lightning:button class="slds-m-top_small" type="submit" label="Create new" onclick="{!c.handleSuccess}"/>
+    </lightning:recordEditForm>
+</aura:component>

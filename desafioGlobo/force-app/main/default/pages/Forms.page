@@ -1,0 +1,82 @@
+<apex:page controller="ItemController">
+    <style>
+        
+        html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-image: linear-gradient(blue, white);
+        }
+        
+        #Cadastrar{
+        margin-top: 10%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        text-align: center;
+        background-color: white; 
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+        
+        #form {
+        border: solid;
+        color: blue;
+        }
+        
+        
+        
+    </style>
+    <apex:slds />
+    <div id="Cadastrar" class="apex-form">
+        <apex:pageBlock >
+            <apex:form >
+                <apex:panelGrid columns="2">
+                    <div class="slds-text-heading_medium slds-align_absolute-center">Inserir Item</div>
+                    
+                    <div class="slds-p-around_medium">
+                        <label class="slds-form-element__label slds-p-around_medium" for="text-input-id-46">
+                            <abbr class="slds-required" title="required">*</abbr>Nome do Item</label>
+                        <div class="slds-form-element__control">
+                            <apex:inputText value="{!Nome}" styleClass="slds-input" required="true"/>
+                        </div>
+                    </div>
+                    
+                    <div class="slds-p-around_medium">
+                        <label class="slds-form-element__label" for="text-input-id-46">
+                            <abbr class="slds-required" title="required">*</abbr>Quantidade</label>
+                        <div class="slds-form-element__control">
+                            <apex:inputText value="{!Quantidade}" styleClass="slds-input" required="true"/>
+                        </div>
+                    </div>
+                    
+                    <div class="slds-p-around_medium">
+                        <label class="slds-form-element__label" for="text-input-id-46">
+                            <abbr class="slds-required" title="required">*</abbr>Valor Unitário</label>
+                        <div class="slds-form-element__control">
+                            <apex:inputText value="{!ValorUnitario}" styleClass="slds-input" required="true"/>
+                        </div>
+                    </div>
+                    
+                    <div class="slds-p-around_medium">
+                        <label class="slds-form-element__label" for="text-input-id-46">Descrição</label>
+                        <div class="slds-form-element__control">
+                            <apex:inputText value="{!DescricaoProduto}" styleClass="slds-input"/>
+                        </div>
+                    </div>
+                    
+                    <div class="slds-p-around_medium">
+                        <label class="slds-form-element__label" for="text-input-id-46">Nome do Fornecedor</label>
+                        <div class="slds-form-element__control">
+                            <apex:inputText value="{!NomeFornecedor}" styleClass="slds-input"/>
+                        </div>
+                    </div>
+                    
+                </apex:panelGrid>
+                <apex:commandButton value="Salvar" styleClass="slds-button slds-button_brand" action="{!salvarItem}"/>
+                <apex:pageMessages ></apex:pageMessages>
+            </apex:form>
+        </apex:pageBlock>
+    </div>
+</apex:page>

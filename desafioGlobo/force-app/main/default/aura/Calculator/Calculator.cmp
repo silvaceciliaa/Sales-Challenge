@@ -1,0 +1,120 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    
+    <aura:attribute name="lstNumbers" type="List" default="[]"/>
+    <aura:attribute name="strOperator" type="String"/>
+    <aura:attribute name="strCurrentNumber" type="String" default=""/>
+    <aura:attribute name="strInput" type="String" default=""/>
+    <aura:attribute name="result" type="Integer" default="0"/>
+    <aura:attribute name="darkMode" type="Boolean" default="false"/>
+    
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-standard-account" title="Calculadora">
+                        <img src="{!$Resource.CalculadoraIcone}" id="calculadoraIcon"></img>
+                        <span class="slds-assistive-text">Calculadora</span>
+                    </span>
+                </div>
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <a href="#" class="slds-card__header-link slds-truncate" title="Calculadora">
+                            <span>Calculadora</span>
+                        </a>
+                    </h2>
+                </div>
+                <div class="slds-col slds-no-flex slds-align-middle">
+                    <label class="slds-checkbox_toggle slds-grid">
+                        <input type="checkbox" aura:id="darkModeToggle" checked="{!v.darkMode}" onchange="{!c.toggleDarkMode}"/>
+                        <span class="slds-checkbox_faux_container" aria-live="assertive">
+                            <span class="slds-checkbox_faux"></span>
+                            <span class="slds-checkbox_on">Modo Escuro</span>
+                            <span class="slds-checkbox_off">Modo Claro</span>
+                        </span>
+                    </label>
+                </div>
+            </header>
+        </div>
+    </article>
+    
+    <aura:if isTrue="{!v.darkMode}">
+        <lightning:card>
+            <div id="mainDiv" class="slds-p-around_medium dark-mode">
+                <div id="ioDiv">
+                    <div id="inputDiv">{!v.strInput}</div>
+                    <div id="outputDiv">{!v.result}</div>
+                </div>
+                <div id="operationsDiv">
+                    <table>
+                        <tr>
+                            <td onclick="{!c.numberClicked}">7</td>
+                            <td onclick="{!c.numberClicked}">8</td>
+                            <td onclick="{!c.numberClicked}">9</td>
+                            <td class="operator" onclick="{!c.operatorClicked}">/</td>
+                        </tr>
+                        <tr>
+                            <td onclick="{!c.numberClicked}">4</td>
+                            <td onclick="{!c.numberClicked}">5</td>
+                            <td onclick="{!c.numberClicked}">6</td>
+                            <td class="operator" onclick="{!c.operatorClicked}">x</td>
+                        </tr>
+                        <tr>
+                            <td onclick="{!c.numberClicked}">1</td>
+                            <td onclick="{!c.numberClicked}">2</td>
+                            <td onclick="{!c.numberClicked}">3</td>
+                            <td class="operator" onclick="{!c.operatorClicked}">-</td>
+                        </tr>
+                        <tr>
+                            <td class="clear-button" onclick="{!c.clearClicked}">C</td>
+                            <td onclick="{!c.numberClicked}">0</td>
+                            <td class="equals" onclick="{!c.calculate}">=</td>
+                            <td class="operator" onclick="{!c.operatorClicked}">+</td>
+                            
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </lightning:card>
+        <aura:set attribute="else">
+            <lightning:card>
+                <div id="mainDiv" class="slds-p-around_medium">
+                    <div id="ioDiv">
+                        <div id="inputDiv">{!v.strInput}</div>
+                        <div id="outputDiv">{!v.result}</div>
+                    </div>
+                    <div id="operationsDiv">
+                        <table>
+                            <tr>
+                                <td onclick="{!c.numberClicked}">7</td>
+                                <td onclick="{!c.numberClicked}">8</td>
+                                <td onclick="{!c.numberClicked}">9</td>
+                                <td class="operator" onclick="{!c.operatorClicked}">/</td>
+                            </tr>
+                            <tr>
+                                <td onclick="{!c.numberClicked}">4</td>
+                                <td onclick="{!c.numberClicked}">5</td>
+                                <td onclick="{!c.numberClicked}">6</td>
+                                <td class="operator" onclick="{!c.operatorClicked}">x</td>
+                            </tr>
+                            <tr>
+                                <td onclick="{!c.numberClicked}">1</td>
+                                <td onclick="{!c.numberClicked}">2</td>
+                                <td onclick="{!c.numberClicked}">3</td>
+                                <td class="operator" onclick="{!c.operatorClicked}">-</td>
+                            </tr>
+                            <tr>
+                                <td class="clear-button" onclick="{!c.clearClicked}">C</td>
+                                <td onclick="{!c.numberClicked}">0</td>
+                                <td class="equals" onclick="{!c.calculate}">=</td>
+                                <td class="operator" onclick="{!c.operatorClicked}">+</td>
+                                
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </lightning:card>
+        </aura:set>
+    </aura:if>
+    
+    
+</aura:component>
