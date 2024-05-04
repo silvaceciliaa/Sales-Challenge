@@ -12,7 +12,6 @@ global class DeleteOrders implements Schedulable, Database.Batchable<sObject> {
     }
     
     global void finish(Database.BatchableContext BC){
-        // Implement any post-processing logic here
     }
     
     global void execute(SchedulableContext SC){
